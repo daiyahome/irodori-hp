@@ -95,3 +95,49 @@ function getRandomPastelColor() {
     var hue = Math.floor(Math.random() * 360);
     return `hsl(${hue}, 70%, 80%)`; // 彩度 70%、明度 80% で柔らかい色合いに
 }
+
+// メール問い合わせ送信後のメッセージ
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('mailForm');
+    const confirmationMessage = document.getElementById('confirmationMessage');
+    
+    form.addEventListener('submit', function(event) {
+        // デフォルトの送信をキャンセル
+        event.preventDefault();
+        
+        // 確認ダイアログを表示
+        if (confirm('本当に送信してもよろしいですか？')) {
+            // フォームデータを取得
+            const formData = new FormData(form);
+            
+            // フォームを非表示にし、送信中メッセージを表示することもできます
+            form.style.display = 'none';
+            const loadingMessage = document.createElement('div');
+            // loadingMessage.textContent = '送信中...';
+            form.parentNode.insertBefore(loadingMessage, confirmationMessage);
+            
+            // Google Apps Scriptにフォームデータを送信
+            fetch(form.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    // 送信成功
+                    form.reset(); // フォームをリセット
+                    confirmationMessage.style.display = 'block'; // 成功メッセージを表示
+                    
+                    // 必要に応じて、数秒後にメッセージを非表示にする
+                    // setTimeout(() => {
+                    //     confirmationMessage.style.display = 'none';
+                    // }, 5000);
+                } else {
+                    throw new Error('送信に失敗しました');
+                }
+            })
+            .catch(error => {
+                alert('エラーが発生しました: ' + error.message);
+            });
+        }
+    });
+});

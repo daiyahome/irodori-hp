@@ -389,14 +389,6 @@
             </ol>
         </section>
 
-
-
-
-
-
-
-
-
         <!-- よくある質問 -->
         <section id="faq">
             <h2>よくある質問</h2>
@@ -489,7 +481,7 @@
         <!-- お問い合わせセクション -->
         <section id="contact-section" class="contact-section">
             <h2>子育てがつらく感じる前に<br>まずはご相談ください</h2>
-            <p>「うちの子は対象なのかな？」「もっと詳しく話を聞いてみたい」なんでもいいので<br>
+            <p>「うちの子は対象なのかな？」「もっと詳しく話を聞いてみたい」なんでもいいので<br class="pc-br">
                 あなたの不安や疑問を私たちにぶつけてみてください
             </p>
             <!-- TEL -->
@@ -522,7 +514,7 @@
 
         <section id="mail-section">
             <h2>メールでのお問い合わせ</h2>
-            <form class="mail-form">
+            <form id="mailForm" class="mail-form" action="https://script.google.com/macros/s/AKfycbw2xdKo7515P7qmJajZOCXD6axUU1Z-y0Y0QAqG0ieD-XmBALhCiE97AaxGIOQWm6Hk/exec" method="POST">
                 <label for="name">お名前</label>
                 <input type="text" id="name" name="name" placeholder="お名前を入力してください" required>
 
@@ -538,8 +530,11 @@
                 <label for="message">お問い合わせ内容</label>
                 <textarea id="message" name="message" placeholder="ご質問・ご相談内容を入力してください" required></textarea>
 
-                <button type="submit">送信する</button>
+                <button type="submit" id="submitButton">送信する</button>
             </form>
+            <div id="confirmationMessage">
+                送信しました。<br class="sp-br">お問い合わせありがとうございます。
+            </div>
         </section>
 
 
