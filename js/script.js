@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // アニメーション用の図形を生成するJavaScript
     var container = document.getElementById("background-animation-container");
-var shapes = ["circle", "square", "triangle", "image", "image", "image", "image"];
+var shapes = ["image"];
 
 // ハイビスカス画像の配列（好きなだけ追加OK）
 var hibiscusImages = [
