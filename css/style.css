@@ -66,6 +66,15 @@ h2 {
     animation: bubblemove linear infinite, rotateShape linear infinite;
 }
 
+/* 画像用のスタイル追加 */
+.ani-image {
+    position: absolute;
+    object-fit: contain;
+    animation: bubblemove linear infinite, rotateShape linear infinite;
+    pointer-events: none;
+    user-select: none;
+}
+
 /* 丸 */
 .ani-circle {
     border-radius: 50%;
