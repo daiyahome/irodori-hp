@@ -64,41 +64,38 @@ h2 {
     position: absolute;
     top: 100%;
     animation: bubblemove linear infinite, rotateShape linear infinite;
-}
-
-/* 画像用のスタイル追加 */
-.ani-image {
-    position: absolute;
-    object-fit: contain;
-    animation: bubblemove linear infinite, rotateShape linear infinite;
     pointer-events: none;
     user-select: none;
 }
 
+.ani-image {
+    object-fit: contain;
+}
+
 /* 丸 */
-.ani-circle {
+/* .ani-circle {
     border-radius: 50%;
 }
 
 /* 四角 */
-.ani-square {
+/* .ani-square {
     clip-path: inset(0% 0% 0% 0%);
-}
+} */
 
 /* 三角 */
-.ani-triangle {
+/* .ani-triangle {
     width: 0;
     height: 0;
     position: absolute;
-}
-
+} */ 
+/* 浮遊アニメーション：600px → 1000pxに変更してゆっくり上昇 */
 @keyframes bubblemove {
     from {
         top: 100%;
     }
 
     to {
-        top: -600px;
+        top: -1000px;
     }
 }
 

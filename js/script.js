@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // アニメーション用の図形を生成するJavaScript
     var container = document.getElementById("background-animation-container");
-var shapes = ["image"];
 
 // ハイビスカス画像の配列（好きなだけ追加OK）
 var hibiscusImages = [
@@ -18,36 +17,22 @@ var hibiscusImages = [
 ];
 
 for (var i = 0; i < 30; i++) {
-    var shapeType = shapes[Math.floor(Math.random() * shapes.length)];
-    var shape;
+    var shape = document.createElement("img");
+    var randomImg = hibiscusImages[Math.floor(Math.random() * hibiscusImages.length)];
+    shape.src = randomImg;
+    shape.classList.add("ani-shape", "ani-image");
+
     var size = (Math.floor(Math.random() * 6) + 3) * 30; // 90〜180px
-    var pastelColor = getRandomPastelColor();
-
-    if (shapeType === "image") {
-        shape = document.createElement("img");
-        var randomImg = hibiscusImages[Math.floor(Math.random() * hibiscusImages.length)];
-        shape.src = randomImg;
-        shape.classList.add("ani-shape", "ani-image");
-        shape.style.width = size + "px";
-        shape.style.height = size + "px";
-    } else {
-        shape = document.createElement("div");
-        shape.classList.add("ani-shape", "ani-" + shapeType);
-
-        if (shapeType === "triangle") {
-            shape.style.borderLeft = size / 2 + "px solid transparent";
-            shape.style.borderRight = size / 2 + "px solid transparent";
-            shape.style.borderBottom = size + "px solid " + pastelColor;
-        } else {
-            shape.style.width = size + "px";
-            shape.style.height = size + "px";
-            shape.style.backgroundColor = pastelColor;
-        }
-    }
+    shape.style.width = size + "px";
+    shape.style.height = size + "px";
 
     shape.style.left = Math.floor(Math.random() * 100) + "%";
-    shape.style.animationDuration = (Math.random() * 8 + 12) + "s, " + (Math.random() * 5 + 2) + "s";
-    shape.style.animationDelay = Math.floor(Math.random() * 5) + "s";
+
+    // 浮遊速度：20〜40秒、回転速度：10〜20秒
+    var floatDuration = (Math.random() * 20 + 20).toFixed(1) + "s";
+    var rotateDuration = (Math.random() * 10 + 10).toFixed(1) + "s";
+    shape.style.animationDuration = `${floatDuration}, ${rotateDuration}`;
+    shape.style.animationDelay = Math.floor(Math.random() * 10) + "s";
 
     container.appendChild(shape);
 }
