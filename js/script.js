@@ -27,6 +27,7 @@ for (var i = 0; i < 30; i++) {
     shape.style.height = size + "px";
 
     shape.style.left = Math.floor(Math.random() * 100) + "%";
+    
 
     // 浮遊速度：20〜40秒、回転速度：10〜20秒
     var floatDuration = (Math.random() * 20 + 20).toFixed(1) + "s";
@@ -38,42 +39,12 @@ for (var i = 0; i < 30; i++) {
 }
 
 
-    // var container = document.getElementById("background-animation-container");
-    // var shapes = ["circle", "square", "triangle"];
-
-    // for (var i = 0; i < 30; i++) {
-    //     var shapeType = shapes[Math.floor(Math.random() * shapes.length)];
-
-    //     var shape = document.createElement("div");
-    //     shape.classList.add("ani-shape", "ani-" + shapeType);
-
-    //     var size = (Math.floor(Math.random() * 6) + 3) * 30; // サイズランダム（90〜180px）
-    //     var pastelColor = getRandomPastelColor(); // パステルカラーを取得
-
-    //     if (shapeType === "triangle") {
-    //         shape.style.borderLeft = size / 2 + "px solid transparent";
-    //         shape.style.borderRight = size / 2 + "px solid transparent";
-    //         shape.style.borderBottom = size + "px solid " + pastelColor;
-    //     } else {
-    //         shape.style.width = size + "px";
-    //         shape.style.height = size + "px";
-    //         shape.style.backgroundColor = pastelColor;
-    //     }
-
-    //     shape.style.left = Math.floor(Math.random() * 100) + "%";
-    //     shape.style.animationDuration = (Math.random() * 8 + 12) + "s"; // 浮遊速度（12〜20秒）
-    //     shape.style.animationDelay = Math.floor(Math.random() * 5) + "s";
-
-    //     // 回転アニメーション速度をランダムにする
-    //     shape.style.animationDuration = shape.style.animationDuration + ", " + (Math.random() * 5 + 2) + "s"; // 回転速度
-
-    //     container.appendChild(shape);
-// }
 
     // MENU
     const menuToggle = document.getElementById('menuToggle');
 const closeMenu = document.getElementById('closeMenu');
 const menuOverlay = document.getElementById('menuOverlay');
+const header = document.querySelector('header'); // ヘッダーを取得
 
 menuToggle.addEventListener('click', function () {
     menuOverlay.classList.add('active');
@@ -93,16 +64,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
-            targetElement.scrollIntoView({
+            const headerHeight = header.offsetHeight;
+            const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+            const offsetPosition = elementPosition - headerHeight;
+
+            window.scrollTo({
+                top: offsetPosition,
                 behavior: 'smooth'
             });
         }
 
-        // Close menu if open
-        menuOverlay.classList.remove('active');
+        // メニューを閉じる
+        if (menuOverlay) {
+            menuOverlay.classList.remove('active');
+        }
     });
 });
-
 
 
 // 初期化関数を実行
