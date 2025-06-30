@@ -12,6 +12,9 @@
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
 
 </head>
 
@@ -28,11 +31,8 @@
         <button class="close-menu" id="closeMenu">×</button>
         <div class="menu-links">
             <a href="#home">HOME</a>
+            <a href="#support">サポート内容</a>
             <a href="#target">対象となるお子様</a>
-            <a href="#fee">ご利用料金</a>
-            <a href="#testimonials">ご利用者さんから頂いた声</a>
-            <a href="#staff">スタッフ紹介</a>
-            <a href="#flow">ご利用までの流れ</a>
             <a href="#faq">よくある質問</a>
             <a href="#contact-section">お問い合わせ</a>
         </div>
@@ -71,11 +71,11 @@
                         ご家族とお子様を
                         <br class="sp-br">
                         <span class="green">看護師がサポート</span>
-                      </h1>
-                      
+                    </h1>
+
                     <div class="top-usable">
                         <div class="top-usable-p1">
-                            <div>乳幼児・こども医療費助成制度が使えます</div>
+                            <div>こども医療費助成制度が使えます</div>
                         </div>
                         <p>中学生まで負担なし<br>一部市町村は高校生まで拡大中</p>
                     </div>
@@ -87,110 +87,192 @@
 
             <!-- worryセクション -->
             <p>&nbsp;</p>
-            <div class="worry">
+            <div class="worry" id="worry">
+                <h2 class="text-center my-5 fw-bold display-6">
+                    <span class="underline-text">
+                        育児に奮闘中のご家族の皆さん
+                        <div class="handwritten-underline">
+                            <svg class="underline-svg" viewBox="0 0 400 20" preserveAspectRatio="none">
+                                <path class="underline-path underline-1" d="M5,12 Q50,8 100,11 T200,9 T300,12 T395,10"
+                                    vector-effect="non-scaling-stroke" />
+                            </svg>
+                        </div>
+                    </span><br>
+                    <span class="underline-text">
+                        こんなお悩み、感じたことありませんか？
+                        <div class="handwritten-underline">
+                            <svg class="underline-svg" viewBox="0 0 400 20" preserveAspectRatio="none">
+                                <path class="underline-path underline-2" d="M8,14 Q60,10 120,13 T240,11 T350,14 T392,12"
+                                    vector-effect="non-scaling-stroke" />
+                            </svg>
+                        </div>
+                    </span>
+                </h2>
+                <p class="text-center custom-text">ひとつでも当てはまれば、お気軽にご相談ください。</p>
 
 
-                <h2>子育て中のお母さんお父さん<br>こんなことになやんでいませんか？</h2>
+
                 <ul class="worry-list">
-                    <li>目を離すと何をするかわからないので、日中２人きりで気が休まらない</li>
-                    <li>こどもを買い物に連れていくと大変なので、なかなかスーパーにもいけない</li>
-                    <li>こどもはかわいいし、子育ても楽しいけど、少しだけでも一人の時間が欲しい</li>
-                    <li>周りに発達障害の子どもを持つ人がいなくて、誰に相談したらよいかわからない</li>
-                    <li>こどもが急に不登校になり、家からでなくなってどうしたらよいかわからない</li>
+                    <li class="worry-item d-flex align-items-start">
+                        <img class="img-check" src="img/check.png" alt="チェックマーク">
+                        <p class="mb-0 ms-2">「学校に行きたくない」と言う日が増えてきたけれど、どう声をかけていいかわからない。<br>
+                            <img src="img/yokobou.png" alt="横棒" class="img-yokobou">
+                            <span class="worry-detail">不登校や登校しぶりが続いている</span>
+                            <img src="img/yokobou.png" alt="横棒" class="img-yokobou">
+                        </p>
+                    </li>
+                    <li class="worry-item d-flex align-items-start">
+                        <img class="img-check" src="img/check.png" alt="チェックマーク">
+                        <p class="mb-0 ms-2">ゲームやスマホにばかり夢中で生活リズムが乱れ、注意しても全く聞いてくれない。<br>
+                            <img src="img/yokobou.png" alt="横棒" class="img-yokobou">
+                            <span class="worry-detail">昼夜逆転・無気力・反抗的な態度</span>
+                            <img src="img/yokobou.png" alt="横棒" class="img-yokobou">
+                        </p>
+                    </li>
+                    <li class="worry-item d-flex align-items-start">
+                        <img class="img-check" src="img/check.png" alt="チェックマーク">
+                        <p class="mb-0 ms-2">感情の起伏が激しく、ちょっとしたことで怒ったり泣いたり…家庭でどう対応していいか悩んでいる。<br>
+                            <img src="img/yokobou.png" alt="横棒" class="img-yokobou">
+                            <span class="worry-detail">家庭内トラブル・癇癪・暴言など</span>
+                            <img src="img/yokobou.png" alt="横棒" class="img-yokobou">
+                        </p>
+                    </li>
+                    <li class="worry-item d-flex align-items-start">
+                        <img class="img-check" src="img/check.png" alt="チェックマーク">
+                        <p class="mb-0 ms-2">人とのコミュニケーションが苦手で、友だちができず本人も落ち込んでいる。<br>
+                            <img src="img/yokobou.png" alt="横棒" class="img-yokobou">
+                            <span class="worry-detail">発達特性・孤立・自己否定感</span>
+                            <img src="img/yokobou.png" alt="横棒" class="img-yokobou">
+                        </p>
+                    </li>
+                    <li class="worry-item d-flex align-items-start">
+                        <img class="img-check" src="img/check.png" alt="チェックマーク">
+                        <p class="mb-0 ms-2">学校や支援機関とどう連携したらいいのか、進学や将来のことも不安が尽きない。<br>
+                            <img src="img/yokobou.png" alt="横棒" class="img-yokobou">
+                            <span class="worry-detail">進路相談・福祉とのつながりに不安</span>
+                            <img src="img/yokobou.png" alt="横棒" class="img-yokobou">
+                        </p>
+                    </li>
+                    <li class="worry-item d-flex align-items-start">
+                        <img class="img-check" src="img/check.png" alt="チェックマーク">
+                        <p class="mb-0 ms-2">自分の気持ちや困っていることを話せず、学校や家でもずっと黙っていることが多い。<br>
+                            <img src="img/yokobou.png" alt="横棒" class="img-yokobou">
+                            <span class="worry-detail">緘黙・引きこもり・不安症</span>
+                            <img src="img/yokobou.png" alt="横棒" class="img-yokobou">
+                        </p>
+                    </li>
+                    <li class="worry-item d-flex align-items-start">
+                        <img class="img-check" src="img/check.png" alt="チェックマーク">
+                        <p class="mb-0 ms-2">こだわりが強く、思い通りにいかないとパニックになってしまう。<br>
+                            <img src="img/yokobou.png" alt="横棒" class="img-yokobou">
+                            <span class="worry-detail">発達障害の特性・感情調整の難しさ</span>
+                            <img src="img/yokobou.png" alt="横棒" class="img-yokobou">
+                        </p>
+                    </li>
+                    <li class="worry-item d-flex align-items-start">
+                        <img class="img-check" src="img/check.png" alt="チェックマーク">
+                        <p class="mb-0 ms-2">一見元気に見えるけれど、ストレスをため込んで突然体調を崩したり泣き出したりする。<br>
+                            <img src="img/yokobou.png" alt="横棒" class="img-yokobou">
+                            <span class="worry-detail">心因性の体調不良・自律神経の乱れ</span>
+                            <img src="img/yokobou.png" alt="横棒" class="img-yokobou">
+                        </p>
+                    </li>
+                    <li class="worry-item d-flex align-items-start">
+                        <img class="img-check" src="img/check.png" alt="チェックマーク">
+                        <p class="mb-0 ms-2">支援を受けさせたいのに連れていくのが難しい。<br>
+                            <img src="img/yokobou.png" alt="横棒" class="img-yokobou">
+                            <span class="worry-detail">外出への抵抗・支援の中断</span>
+                            <img src="img/yokobou.png" alt="横棒" class="img-yokobou">
+                        </p>
+                    </li>
+                    <li class="worry-item d-flex align-items-start">
+                        <img class="img-check" src="img/check.png" alt="チェックマーク">
+                        <p class="mb-0 ms-2">保護者自身が疲れきっていて、子どものケアに向き合う余裕がなくなっている。<br>
+                            <img src="img/yokobou.png" alt="横棒" class="img-yokobou">
+                            <span class="worry-detail">レスパイトケアの必要・親のメンタルサポート</span>
+                            <img src="img/yokobou.png" alt="横棒" class="img-yokobou">
+                        </p>
+                    </li>
                 </ul>
-                <div class="worry-solution">
-                    <p>ずっと一人で苦しんでいたのですね。
-                        <br class="pc-br">
-                        <span class="sp-br"></span>辛かったですよね。</p>
-                    <p>私たちのサポートを受けていただいたお母さんからは
-                        <span
-                            class="orange bold">「こんなことならもっと早く相談すればよかった」「子育てを楽しめるようになって前向きになった」「わからないことの不安を相談することで解消できた」</span>
-                        といったお声をたくさんいただいております。
+                <div class="d-flex justify-content-center align-items-center m-3">
+                    <img src="img/heart.png" alt="ハート" class="worry-img">
+                    <p class="text-center m-1">これらは、二次障害（不安・うつ・自己否定）につながることもあるため、早めの支援がとても大切です。<br>
+                        私たち、訪問看護へご相談ください。
                     </p>
                 </div>
-
 
             </div>
             <p>&nbsp;</p>
 
-            <!-- saportセクション -->
-            <div class="saport">
-                <h2><span class="font-18px">子育てに悩む、ご家族とお子さまへの</span><br>発達支援・ご家庭サポート</h2>
-                <div class="saport-inner">
-                    <div class="saport-box">
-                        <img class="box-left" src="https://placehold.jp/150x150.png">
-                        <div class="box-right">
+
+            <!-- supportセクション -->
+            <div id="support" class="support container-fluid px-0 mx-0">
+                <img src="img/rainbow1.png" alt="虹色フレーム上" class="img-fluid w-100 d-block m-0 p-0">
+                <h2 class="text-center my-5 fw-bold display-6">私たちのサポート内容</h2>
+                <div class="row justify-content-center mx-3">
+                    <!-- 上段3つ -->
+                    <div class="col-12 col-md-4 mb-4">
+                        <div class="support-box h-100 p-3 border rounded text-center">
+                            <img src="img/support1.png" alt="こども" class="img-fluid w-50">
                             <h4>こども達とのかかわり</h4>
-                            <p class="font-12px">本気で遊ぶ！子どもたちは一緒に遊んでくれる人を「信頼」します。遊びを通した信頼関係の土台造りは何よりも大切な最初のステップ</p>
+                            <p class="mt-3">
+                                本気で遊ぶ！子どもたちは一緒に遊んでくれる人を「信頼」します。<br>
+                                遊びを通した信頼関係の土台造りは何よりも大切な最初のステップ
+                            </p>
                         </div>
                     </div>
-                    <div class="saport-box">
-                        <img class="box-left" src="https://placehold.jp/150x150.png">
-                        <div class="box-right">
-                            <h4>親御さんのサポート</h4>
-                            <p class="font-12px">お母さん、お父さんとの信頼関係も、とても大切です。悩みを話せて、一緒に笑い合いながら前に進んでいける。
-                                そんな関係を創っていきます。</p>
+                    <div class="col-12 col-md-4 mb-4">
+                        <div class="support-box h-100 p-3 border rounded text-center">
+                            <img src="img/support2.png" alt="おとな" class="img-fluid w-50">
+                            <h4>ご家族さまへの寄り添い</h4>
+                            <p class="mt-3">
+                                ご家族の方の気持ちにも丁寧に寄り添い、話やすく、頼れる存在として並走します。<br>
+                                「ひとりじゃない」と思える関係づくりを大切にしています。
+                            </p>
                         </div>
                     </div>
-                    <div class="saport-box">
-                        <img class="box-left" src="https://placehold.jp/150x150.png">
-                        <div class="box-right">
-                            <h4>知的障がいをもつ子への支援</h4>
-                            <p class="font-12px">信頼関係をつくり、その上で知的障がいのある子の生活のしづらさ、”食う”　”寝る”　”出す（排せつ）”などの生活動作をサポート</p>
+                    <div class="col-12 col-md-4 mb-4">
+                        <div class="support-box h-100 p-3 border rounded text-center">
+                            <img src="img/support3.png" alt="協力" class="img-fluid w-50">
+                            <h4>親子の関係サポート</h4>
+                            <p class="mt-3">
+                                お子さまの気持ちや行動の背景を一緒に考え、より良い関係づくりをサポートします。
+                            </p>
                         </div>
                     </div>
-                    <div class="saport-box">
-                        <img class="box-left" src="https://placehold.jp/150x150.png">
-                        <div class="box-right">
-                            <h4>不登校・発達障がいと<br>いわれる子たちへの支援</h4>
-                            <p class="font-12px">信頼関係ができたら、次のステップへ。それは”体験”と”人と関わる”を通して”世界を広げる”こと！</p>
+
+                    <div class="row justify-content-center mx-3">
+                        <!-- 下段2つ -->
+                        <div class="col-12 col-md-4 mb-4">
+                            <div class="support-box h-100 p-3 border rounded text-center">
+                                <img src="img/support4.png" alt="支援" class="img-fluid w-50">
+                                <h4>発達特性のあるお子さんの<br>暮らしの支援</h4>
+                                <p class="mt-3">
+                                    生活の中での困りごと（食事・睡眠・排泄など）を一緒に見直しながら、お子さまが安心して日常を過ごせるよう支援します。
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="saport-box">
-                        <img class="box-left" src="https://placehold.jp/150x150.png">
-                        <div class="box-right">
-                            <h4>親子の関わりサポート</h4>
-                            <p class="font-12px">「何を考えているのか、どう対応したらいいのかわからない」というお子様への理解と対応をサポート</p>
+                        <div class="col-12 col-md-4 mb-4">
+                            <div class="support-box h-100 p-3 border rounded text-center">
+                                <img src="img/support5.png" alt="家" class="img-fluid w-50">
+                                <h4>学校に行きづらい、発達に不安のあるお子さまへの支援</h4>
+                                <p class="mt-3">
+                                    お子さまの「できた！」という体験を重ねることで、自信を育み、社会とのつながりを少しずつ広げていく支援を行っています。
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="saport-box">
-                        <img class="box-left" src="https://placehold.jp/150x150.png">
-                        <div class="box-right">
-                            <h4>各種検診・診察サポート</h4>
-                            <p class="font-12px">血圧測定や注射の練習、耳鼻科や眼科検診の練習など医療行為を受ける練習を通して、皆が安心して検診・診療が受けられるようサポート</p>
-                        </div>
+
                     </div>
                 </div>
-
+                <img src="img/rainbow2.png" alt="虹色フレーム下" class="img-fluid w-100 d-block m-0 p-0">
             </div>
 
+            <p>&nbsp;</p>
 
-            <div class="introduction">
-                <div class="introduction-img">
-                    <img src="https://placehold.jp/640x480.png" alt="いろどりの紹介画像">
-                </div>
-                <div class="vertical-text">
-                    <p>こどもたちの<br>「心の土台」づくりが<br>私たちの使命です</p>
-                </div>
-            </div>
-
-            <div class="introduction-section">
-                <h3 class="introduction-label">お子様向け 訪問看護ステーション</h3>
-                <h2 class="introduction-name">いろどり</h2>
-                <p>
-                    いろどりがもっとも大切にしているのは、こども達の
-                    <span class="highlight">「心の土台」</span>づくりであり、そのために
-                    <span class="highlight">「心のケアによる安心感」</span>と
-                    <span class="highlight">「遊びを通した信頼関係」</span>づくりが必要と考えております。
-                </p>
-                <p>
-                    その土台が育まれることで、情緒・生活リズム・学ぶ力などが安定していきます。（期間の個人差あり）
-                </p>
-            </div>
 
             <!-- 対象者 -->
-            <div id="target">
-                <h2>対象となるお子様</h2>
+            <div class="target" id="target">
+                <h2 class="text-center my-5 fw-bold display-6">対象となるお子様</h2>
                 <p>発達に心配のあるお子さま、0歳から15歳まで</p>
 
 
@@ -219,263 +301,71 @@
                         <p>(その他エリアもご相談ください)</p>
                     </div>
                 </div>
-            </div>
-
-            <!-- ご利用料金 -->
-            <div id="fee">
-                <h2>ご利用料金</h2>
-                <table>
-                    <tr>
-                        <th class="th-left">中学生までのお子さまの場合</th>
-                        <th class="th-right">料金</th>
-                    </tr>
-                    <tr>
-                        <td class="td-left">ご加入の医療保険にてご利用いただけます。<br>
-                            また、各助成制度も適応可能。
-                        </td>
-                        <td class="td-right">乳幼児・こども医療費助成制度 適応の場合<br>
-                            伊丹市、西宮市、宝塚市：自己負担0円<br>
-                            尼崎市：自己負担金800円/月
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="td-left">交通費</td>
-                        <td class="td-right">無料</td>
-                    </tr>
-                </table>
-            </div>
-
-            <!-- お問い合わせセクション -->
-            <div class="contact-section">
-                <h2>子育てがつらく感じる前に<br>まずはご相談ください</h2>
-                <p>「うちの子は対象なのかな？」「もっと詳しく話を聞いてみたい」なんでもいいので<br class="pc-br">
-                    あなたの不安や疑問を私たちにぶつけてみてください。
-                </p>
-                <!-- TEL -->
-                <div class="contact-section-tel">
-                    <!-- スマホ：リンク -->
-                    <a href="tel:0989875752" class="tel-link">
-                        <span class="tel-icon">
-                            <i class="fas fa-phone"></i>
-                        </span>
-                        <span class="tel-number">今すぐ電話をかける</span>
-                    </a>
-
-                    <!-- PC：テキスト -->
-                    <div class="tel-text">
-                        <span class="tel-icon">TEL</span>
-                        <span class="tel-number">098-987-5752</span>
-                    </div>
-                </div>
-
-                <!-- ボタン2つ -->
-                <div class="contact-section-buttons">
-                    <a class="contact-section-btn mail" href=#mail-section>
-                        <i class="fas fa-envelope"></i>
-                        メールでお問い合わせ
-                    </a>
-                    <a class="contact-section-btn line" href="https://line.me/R/ti/p/LINE-ID" target="_blank">
-                        <i class="fab fa-line"></i>
-                        LINEでお問い合わせ
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ご利用者さんから頂いた声 -->
-        <section id="testimonials">
-            <h2>ご利用者さんから頂いた声</h2>
-            <div class="testimonials-inner">
-                <h3 class="testimonials-title">間違いなく子どもの世界が広がるキッカケになります</h3>
-                <div class="feature">
-                    <p class="feature-item">小学4年生</p>
-                    <p class="feature-item">不登校</p>
-                </div>
-                <div class="testimonials-main">
-                    <img class="testimonials-img" src="https://placehold.jp/320x240.png">
-                    <p>
-                        小4の不登校の我が子が利用させていただいてます。<br><br>
-
-                        最初の頃は、なかなか話すこともできなかったのですがスタッフさんが子どもの興味のあることにとことん付き合ってくれたり、どんな風にしたら遊べるのか？をたくさん考えて、触れ合ってくださいます。<br><br>
-
-                        そのおかげで、今ではスタッフさんに自分から話したり冗談を言いあうまでになりました。お友達もできて子どもの世界がどんどん広がっています。<br><br>
 
 
-                        第3者が家庭に入る、というのは最初は抵抗があるかもしれませんが、間違いなく子どもの世界が広がるキッカケになりますし、親御さんも少し俯瞰して子どものことを見られるようになり、色々な気づきがあります。<br><br>
-
-                        本当に利用して良かったなぁと思います、これからもよろしくお願いします！
-                    </p>
-                </div>
-
-            </div>
-            <div class="testimonials-inner">
-                <h3 class="testimonials-title">間違いなく子どもの世界が広がるキッカケになります</h3>
-                <div class="feature">
-                    <p class="feature-item">小学4年生</p>
-                    <p class="feature-item">不登校</p>
-                </div>
-                <div class="testimonials-main">
-                    <img class="testimonials-img" src="https://placehold.jp/320x240.png">
-                    <p>
-                        小4の不登校の我が子が利用させていただいてます。<br><br>
-
-                        最初の頃は、なかなか話すこともできなかったのですがスタッフさんが子どもの興味のあることにとことん付き合ってくれたり、どんな風にしたら遊べるのか？をたくさん考えて、触れ合ってくださいます。<br><br>
-
-                        そのおかげで、今ではスタッフさんに自分から話したり冗談を言いあうまでになりました。お友達もできて子どもの世界がどんどん広がっています。<br><br>
-
-
-                        第3者が家庭に入る、というのは最初は抵抗があるかもしれませんが、間違いなく子どもの世界が広がるキッカケになりますし、親御さんも少し俯瞰して子どものことを見られるようになり、色々な気づきがあります。<br><br>
-
-                        本当に利用して良かったなぁと思います、これからもよろしくお願いします！
-                    </p>
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- スタッフ紹介 -->
-        <section id="staff">
-            <h2>訪問看護スタッフ</h2>
-            <div class="staff-container">
-                <div class="staff-card">
-                    <img src="https://placehold.jp/180x180.png" alt="高崎 和美">
-                    <div class="staff-name">高崎 和美</div>
-                    <div class="staff-role">看護師</div>
-                </div>
-                <div class="staff-card">
-                    <img src="https://placehold.jp/180x180.png" alt="高崎 和美">
-                    <div class="staff-name">高崎 和美</div>
-                    <div class="staff-role">看護師</div>
-                </div>
-                <div class="staff-card">
-                    <img src="https://placehold.jp/180x180.png" alt="高崎 和美">
-                    <div class="staff-name">高崎 和美</div>
-                    <div class="staff-role">看護師</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 利用の流れ -->
-        <section id="flow">
-            <h2>ご利用までの流れ</h2>
-            <ol class="step">
-                <li>
-                    <div class="step-title">STEP1</div>
-                    <div class="step-content">
-                        <img src="img/step1.png" alt="STEP1の画像">
-                        <p>電話またはLINEお問い合わせ</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="step-title">STEP2</div>
-                    <div class="step-content">
-                        <img src="img/step2.png" alt="STEP2の画像">
-                        <p>担当者とご自宅でお面談</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="step-title">STEP3</div>
-                    <div class="step-content">
-                        <img src="img/step3.png" alt="STEP3の画像">
-                        <p>医師診察・訪問看護計画書作成</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="step-title">STEP4</div>
-                    <div class="step-content">
-                        <img src="img/step4.png" alt="STEP4の画像">
-                        <p>訪問看護ご利用開始</p>
-                    </div>
-                </li>
-            </ol>
         </section>
 
         <!-- よくある質問 -->
-        <section id="faq">
-            <h2>よくある質問</h2>
+        <section id="faq" class="faq">
+            <h2 class="text-center fw-bold display-6">よくある質問</h2>
             <div class="faq-item">
                 <div class="question">
-                    <span class="q-icon">Q</span>どのくらい来てもらえますか？
+                    <img src="img/q.png" class="img-faq" alt="Q">
+                    <p>訪問看護はどんな内容をしてくれますか？</p>
                 </div>
                 <div class="answer">
-                    <span class="a-icon">A</span>基本は週3回まで訪問可能です。
+                    <img src="img/a.png" class="img-faq" alt="A">
+                    <p>お子さまの発達段階に応じて、身体的ケア・遊びを通じた支援・日常生活の練習など、個別に合わせたサポートを行います。</p>
                 </div>
             </div>
             <div class="faq-item">
                 <div class="question">
-                    <span class="q-icon">Q</span>１回何分くらいなのか？
+                    <img src="img/q.png" class="img-faq" alt="Q">
+                    <p>相談だけでも可能ですか？</p>
                 </div>
                 <div class="answer">
-                    <span class="a-icon">A</span>基本30分ですが、初めの面談などはじっくりお話をお聞きさせていただきますのでお時間が３０分以上かかることもあります。
+                    <img src="img/a.png" class="img-faq" alt="A">
+                    <p>はい、もちろん可能です。「対象かどうかわからない」「まず話だけ聞いてみたい」など、お気軽にご相談ください。</p>
                 </div>
             </div>
             <div class="faq-item">
                 <div class="question">
-                    <span class="q-icon">Q</span>30分は短くありませんか？
+                    <img src="img/q.png" class="img-faq" alt="Q">
+                    <p>兄弟姉妹がいる場合も利用できますか？</p>
                 </div>
                 <div class="answer">
-                    <span class="a-icon">A</span>お子さんの体力や集中力を考えると３０分が適当な長さと考えております。
+                    <img src="img/a.png" class="img-faq" alt="A">
+                    <p>対象のお子さまのケアが中心となりますが、状況に応じて兄弟姉妹への配慮も行います。まずはご相談ください。</p>
                 </div>
             </div>
             <div class="faq-item">
                 <div class="question">
-                    <span class="q-icon">Q</span>保護者は子どもと一緒にいなければいけませんか？
+                    <img src="img/q.png" class="img-faq" alt="Q">
+                    <p>保育園や学校との連携はありますか？</p>
                 </div>
                 <div class="answer">
-                    <span class="a-icon">A</span>その場にいらっしゃらなくても可能です。<br>
-                    訪問看護の時間はお母さまの休息（レスパイトケア）のお時間にあてていただいても結構です。
+                    <img src="img/a.png" class="img-faq" alt="A">
+                    <p>必要に応じて保育園・学校の他にも、支援機関と連携しながら支援を行うことができます。安心してご利用いただけます。</p>
                 </div>
             </div>
             <div class="faq-item">
                 <div class="question">
-                    <span class="q-icon">Q</span>外へ遊びに行ったり、登下校のサポートなど、家の外に出ることは可能ですか？
+                    <img src="img/q.png" class="img-faq" alt="Q">
+                    <p>利用するにはどうしたらいいですか？</p>
                 </div>
                 <div class="answer">
-                    <span class="a-icon">A</span>家の外での訪問看護については、お子さまの心身の状態により必要なケアとして行うことがあります。<br>
-                    お問い合わせくださいませ。
+                    <img src="img/a.png" class="img-faq" alt="A">
+                    <p>まずはお問い合わせいただき、面談や主治医の指示書の取得など必要な手続きをご案内いたします。</p>
                 </div>
             </div>
             <div class="faq-item">
                 <div class="question">
-                    <span class="q-icon">Q</span>利用料金はどのくらいですか？
+                    <img src="img/q.png" class="img-faq" alt="Q">
+                    <p>費用の助成や保険の適用はありますか？</p>
                 </div>
                 <div class="answer">
-                    <span class="a-icon">A</span>お住まいの市町村によっては１か月の自己負担額が８００円程度必要な場合がございます。
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="question">
-                    <span class="q-icon">Q</span>入浴は対応してくれますか？
-                </div>
-                <div class="answer">
-                    <span class="a-icon">A</span>可能ですが個々のケースにより対応させていただいております。
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="question">
-                    <span class="q-icon">Q</span>子どもにかんしゃくがあるのですが、訪問にきてもらえますでしょうか？
-                </div>
-                <div class="answer">
-                    <span class="a-icon">A</span>はい。発達支援の一環として対応させていただいております。<br>
-                    そのほか、発達障害や起立性調節障害、などお持ちの方も多数サポートさせていただいております。
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="question">
-                    <span class="q-icon">Q</span>担当の看護師さんはいつも同じですか？
-                </div>
-                <div class="answer">
-                    <span class="a-icon">A</span>基本チームでご対応させていただいております。
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="question">
-                    <span class="q-icon">Q</span>主治医がいません、また子どもを連れて病院にいくことができません。
-                </div>
-                <div class="answer">
-                    <span class="a-icon">A</span>こちらからクリニックをご紹介することが可能です。<br>
-                    またオンライン診療可能ですので病院に行けず困っている方もご利用されています。
+                    <img src="img/a.png" class="img-faq" alt="A">
+                    <p>はい、多くの場合、医療保険や自治体の助成が適用されます。詳細はお住まいの地域により異なりますので、ご相談ください。</p>
                 </div>
             </div>
         </section>
@@ -516,7 +406,9 @@
 
         <section id="mail-section">
             <h2>メールでのお問い合わせ</h2>
-            <form id="mailForm" class="mail-form" action="https://script.google.com/macros/s/AKfycbw2xdKo7515P7qmJajZOCXD6axUU1Z-y0Y0QAqG0ieD-XmBALhCiE97AaxGIOQWm6Hk/exec" method="POST">
+            <form id="mailForm" class="mail-form"
+                action="https://script.google.com/macros/s/AKfycbw2xdKo7515P7qmJajZOCXD6axUU1Z-y0Y0QAqG0ieD-XmBALhCiE97AaxGIOQWm6Hk/exec"
+                method="POST">
                 <label for="name">お名前</label>
                 <input type="text" id="name" name="name" placeholder="お名前を入力してください" required>
 
@@ -548,7 +440,7 @@
         <div class="footer-inner">
             <img src="img/logo.png" alt="ロゴ" class="footer-logo">
             <div class="footer-company">
-                
+
                 <div class="address">
                     <p class="postcode">〒901-0242</p>
                     <p class="address-main">沖縄県豊見城市高安576番地グレイスハイム101</p>
@@ -572,9 +464,9 @@
                 </table>
                 <p>(24h 365日 オンコール対応)</p>
             </div>
-            
+
         </div>
-        
+
         <p class="copyright">&copy; 2025 訪問看護ステーションいろどり All Rights Reserved.</p>
         <div class="social-links">
             <a href="https://www.instagram.com/irodori.kango/" target="_blank" aria-label="Instagram">

@@ -13,8 +13,7 @@ body {
 }
 
 h2 {
-    text-align: center;
-    font-size: 2rem;
+    color: #555;
 }
 
 /* Responsive styles */
@@ -22,30 +21,6 @@ h2 {
     h2 {
         font-size: 18px;
     }
-}
-
-.font-18px {
-    font-size: 18px;
-}
-
-.font-12px {
-    font-size: 12px;
-}
-
-.red {
-    color: #FF6961;
-}
-
-.green {
-    color: #69c369;
-}
-
-.orange {
-    color: #fa9835;
-}
-
-.bold {
-    font-weight: bold;
 }
 
 /*--- 背景 ---*/
@@ -113,6 +88,8 @@ header {
 .header-logo {
     max-width: 110px;
     height: auto;
+    object-fit: contain;
+    /* 比率を保って収める */
 }
 
 .menu-toggle {
@@ -172,9 +149,10 @@ header {
 
 /* 🎯 レスポンシブ対応 */
 @media (max-width: 768px) {
-    .img-logo {
-        max-width: 100px;
+    .header-logo {
+        max-width: 80px;
     }
+
     .menu-links a {
         font-size: 16px;
     }
@@ -210,14 +188,10 @@ section {
 }
 
 
-/* HOME */
-#home {
-    padding: 0;
-}
 
 /* トップセクション */
 .top {
-    margin-top: 100px;
+    margin-top: 180px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -369,7 +343,8 @@ section {
 @media (max-width: 768px) {
     .top {
         padding: 10px;
-        margin-bottom: 50px;
+        margin-top: 80px;
+        margin-bottom: 0px;
     }
 
     .top h1 {
@@ -422,11 +397,99 @@ section {
 .worry {
     padding: 20px;
     background-color: rgba(199, 165, 204, 0.8);
-    box-shadow: 0px 0px 20px 20px rgba(199, 165, 204, 0.8);
+    border-radius: 20px;
 }
 
 .worry h2 {
-    color: #f5f5f5;
+    line-height: 1.6;
+    margin: 15px;
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.underline-text {
+    color: #555;
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+}
+
+.handwritten-underline {
+    position: absolute;
+    left: -10px;
+    right: -10px;
+    bottom: -8px;
+    height: 20px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.underline-svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.underline-path {
+    fill: none;
+    stroke: #a01f93;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: drawUnderline 2s ease-out forwards;
+    opacity: 0.8;
+}
+
+@keyframes drawUnderline {
+    0% {
+        stroke-dashoffset: 1000;
+        opacity: 0.5;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        opacity: 0.8;
+    }
+}
+
+/* 複数の手書き風アンダーライン */
+.underline-1 {
+    animation-delay: 0.5s;
+}
+
+.underline-2 {
+    animation-delay: 1.2s;
+}
+
+.underline-3 {
+    animation-delay: 1.8s;
+}
+
+/* インタラクション効果 */
+.underline-text:hover .underline-path {
+    stroke: #ff5278;
+    stroke-width: 4;
+    animation: pulse 1s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.worry p {
+    color: #3c0c37;
+    font-size: 18px;
 }
 
 .worry-list {
@@ -434,68 +497,70 @@ section {
     background-color: rgba(255, 255, 255, 0.8);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    background-repeat: no-repeat;
     margin: 40px 40px 0 40px;
-    padding: 10px 100px 10px 100px;
+    padding: 10px 90px 10px 90px;
 }
 
 .worry-list li {
     position: relative;
     padding: 25px;
-    font-size: 18px;
-    border-bottom: 1px dotted #777;
+    border-bottom: 1px dotted rgb(165, 137, 106);
 }
 
-.worry-list li::before {
-    content: "";
-    position: absolute;
-    top: 31px;
-    left: 0px;
-    -webkit-transform: rotate(50deg);
-    -ms-transform: rotate(50deg);
-    transform: rotate(50deg);
-    width: 5px;
-    height: 9px;
-    border-right: 2px solid #f5f5f5;
-    border-bottom: 2px solid #f5f5f5;
-    z-index: 10;
-
+/* 最後のリストだけ下線を除く */
+.worry-list li:last-child {
+    border-bottom: none;
 }
 
-.worry-list li::after {
-    content: "";
-    position: absolute;
-    top: 28px;
-    left: -6px;
+.img-check {
+    width: 24px;
+    height: auto;
+    position: relative;
+    top: 2px;
+}
+
+.img-yokobou {
     width: 20px;
-    height: 20px;
-    background-color: #779ECB;
-    border: 1px solid #8b6b4e;
-    border-radius: 2px;
+    height: auto;
 }
 
-.worry-solution {
-    text-align: center;
-    background-color: rgba(96, 135, 179, 0.8);
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    margin: 0px 40px 40px 40px;
-    padding: 20px;
+.worry-item p {
+    color: #666;
 }
 
-.worry-solution p {
-    color: #f5f5f5;
+.worry-detail {
+    color: #666;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 90%;
 }
 
-.worry-solution p:first-child {
-    font-size: 20px;
-    border-bottom: 2px dotted #f5f5f5;
-    margin-bottom: 12px;
+
+.worry-img {
+    height: 100px;
+    object-fit: contain;
+    /* 比率を保って収める */
 }
+
 
 /* 🎯 レスポンシブ対応 */
 @media (max-width: 768px) {
     .worry {
         padding: 3px;
+    }
+
+    .worry h2 {
+        font-size: 1rem;
+    }
+
+    .handwritten-underline {
+        bottom: -6px;
+        height: 16px;
+    }
+
+    .worry p {
+        font-size: 12px;
     }
 
     .worry-list {
@@ -508,239 +573,73 @@ section {
         font-size: 9px;
     }
 
-    .worry-list li::before {
-        top: 14px;
-        left: 0px;
-        width: 2px;
-        height: 5px;
-        border-right: 1.5px solid #f5f5f5;
-        border-bottom: 1.5px solid #f5f5f5;
-
+    .img-check {
+        width: 18px;
+        height: auto;
     }
 
-    .worry-list li::after {
-        top: 12px;
-        left: -4.5px;
-        width: 10px;
-        height: 10px;
+    .img-yokobou {
+        width: 17px;
+        height: auto;
     }
 
-    .worry-solution {
-        margin: 0px 15px 15px 15px;
-        padding: 10px 10px 10px 20px;
-    }
-
-    .worry-solution p {
-        font-size: 10px;
-    }
-
-    .worry-solution p:first-child {
-        font-size: 15px;
-        border-bottom: 1.5px dotted #f5f5f5;
-        margin-bottom: 10px;
+    .worry-img {
+        height: 80px;
+        object-fit: contain;
+        /* 比率を保って収める */
     }
 }
 
-/* saportセクション */
-.saport {
+/* supportセクション */
 
-    background-color: rgba(71, 189, 248, 0.8);
-    box-shadow: 0px 0px 20px 20px rgba(71, 189, 248, 0.8);
-    padding: 20px;
-
+.support {
+    background-color: rgba(235, 166, 143, 0.8);
 }
 
-.saport-inner {
-    display: grid;
-    width: fit-content;
-    column-gap: 2em;
-    grid-template-columns: repeat(2, auto);
-
+.support h2 {
+    color: #555;
 }
 
-.saport-box {
-    display: flex;
-    align-items: center;
-    margin: 20px;
-    background-color: rgba(245, 245, 245, 0.8);
-    border-radius: 20px;
-    overflow: hidden;
+/* サポートボックス全体 */
+.support-box {
+    background-color: rgba(248, 249, 250, 0.8);
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.box-left {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    /* 画像の比率を維持しつつ枠に収める */
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+/* ボックスのホバー効果 */
+.support-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
 
-.box-right {
-    padding: 10px;
+/* ボックスの見出し */
+.support-box h4 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #007bff;
+    /* Bootstrap の青色 */
 }
 
-.box-right h4 {
-    color: orange;
-    font-size: 20px;
-    margin-bottom: 5px;
+/* ボックスのテキスト */
+.support-box p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
 }
 
-/* 🎯 レスポンシブ対応 */
-@media (max-width: 768px) {
-    .saport {
-        padding: 10px;
-    }
-
-    .saport-inner {
-        display: block;
-
-    }
-
-    .saport-box {
-        margin: 10px;
-    }
-
-    .box-left {
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-        /* 画像の比率を維持しつつ枠に収める */
-    }
-
-    .box-right {
-        padding: 0px 5px;
-    }
-
-    .box-right h4 {
-        font-size: 12px;
-        margin-bottom: 5px;
-    }
-
-    .box-right p {
-        font-size: 10px;
-    }
-}
-
-/* 事業所説明 */
-.introduction {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px 20px;
-    gap: 40px;
-    flex-wrap: wrap;
-    margin-top: 50px;
-}
-
-.introduction-img img {
-    width: 100%;
-    max-width: 600px;
-    border-radius: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.vertical-text p {
-    font-size: 50px;
-    font-weight: bold;
-    line-height: 1.8;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    color: #ff914d;
-    white-space: nowrap;
-    margin: 0;
-    padding: 0;
-}
-
-.introduction-section {
-    margin: 40px auto;
-    padding: 0 50px;
-}
-
-.introduction-label {
-    font-size: 18px;
-    color: #66a327;
-    font-weight: bold;
-    margin-bottom: 0;
-}
-
-.introduction-name {
-    font-size: 36px;
-    color: #66a327;
-    margin-top: 0;
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-.highlight {
-    background-color: #ffb3c1;
-    padding: 0 4px;
-    border-radius: 4px;
+.support-box img {
+    height: 200px;
+    /* 高さを統一 */
+    width: auto;
+    /* 幅は自動 */
+    object-fit: contain;
+    /* 比率を保って収める */
 }
 
 
-
-
-/* 🎯 レスポンシブ対応 */
-@media (max-width: 768px) {
-    .introduction {
-        padding: 20px 10px;
-        margin-top: 25px;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .introduction-img {
-        order: 2;
-    }
-
-    .introduction-img img {
-        max-width: 90vw;
-    }
-
-    .vertical-text {
-        order: 1;
-    }
-
-    .vertical-text p {
-        font-size: 20px;
-        font-weight: bold;
-        line-height: 1.5;
-        writing-mode: horizontal-tb;
-        text-orientation: initial;
-        margin-top: 20px;
-        padding: 0;
-    }
-
-    .introduction-section {
-        margin: 10px auto 20px auto;
-        padding: 0 16px;
-    }
-
-    .introduction-label {
-        font-size: 10px;
-        text-align: center;
-    }
-
-    .introduction-name {
-        font-size: 30px;
-        margin-bottom: 10px;
-        text-align: center;
-    }
-
-    .introduction-section p {
-        font-size: 14px;
-    }
-
-    .highlight {
-        background-color: #ffb3c1;
-        padding: 0 4px;
-        border-radius: 4px;
-    }
-}
 
 
 /* 対象者 */
@@ -750,10 +649,10 @@ section {
     padding: 40px;
 }
 
-
-#target h2 {
-    margin-top: 20px;
+.target h2 {
+    color: #555;
 }
+
 
 #target>p {
     color: rgba(33, 137, 76, 0.8);
@@ -892,78 +791,85 @@ section {
 
 }
 
-/* ご利用料金 */
-#fee {
-    margin-top: 3rem;
+
+/* FAQ */
+.faq {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 3px solid rgba(255, 182, 193, 0.3);
+    position: relative;
 }
 
-/* テーブルのスタイル */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
+.faq h2 {
+    color: #555;
+    margin-bottom: 40px;
 }
 
-table,
-th,
-td {
-    border: 1px solid #ddd;
+.faq-item {
+    margin-bottom: 24px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+        linear-gradient(45deg, #ff6b9d, #4ecdc4, #45b7d1, #96ceb4) border-box;
+
+
+    padding: 16px;
+    margin-bottom: 16px;
 }
 
-th,
-td {
-    padding: 12px;
+.question,
+.answer {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 8px;
 }
 
-th {
-    color: #f5f5f5;
-    font-size: large;
+
+
+.question p,
+.answer p {
+    margin-left: 10px;
 }
 
-.th-left {
-    background-color: rgba(71, 189, 248, 0.8);
-    width: 40%;
+.question p {
+    font-weight: bold;
+
 }
 
-.th-right {
-    background-color: rgb(236, 119, 69, 0.8);
+.img-faq {
+    width: 24px;
+    height: auto;
 }
 
-.td-left {
-    background-color: rgba(206, 238, 254, 0.8);
-}
 
-.td-right {
-    background-color: rgba(245, 245, 245, 0.8);
-    color: rgb(236, 119, 69, 1);
-}
 
 /* 🎯 レスポンシブ対応 */
 @media screen and (max-width: 768px) {
-    #fee {
-        margin-top: 20px;
-    }
 
-    /* テーブルのスタイル */
-    table {
-        margin: 10px 0;
-    }
-
-    th,
-    td {
+    .faq-item {
+        border-left: 5px solid #f85539;
         padding: 8px;
+        margin-bottom: 10px;
+        font-size: 12px;
     }
 
-    th {
-        font-size: 11px;
+    .question,
+    .answer {
+        line-height: 1.8;
     }
 
-    .th-left {
-        width: 45%;
-    }
-
-    td {
-        font-size: 10px;
+    .q-icon,
+    .a-icon {
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
     }
 }
 
@@ -973,6 +879,7 @@ th {
     padding: 60px 20px;
     background-color: rgba(176, 214, 94, 0.8);
     text-align: center;
+    border-radius: 20px;
 }
 
 .contact-section h2,
@@ -1147,317 +1054,6 @@ th {
 }
 
 
-/* ご利用者さんから頂いた声 */
-
-
-.testimonials-inner {
-    border: 1px solid #DA7A62;
-    padding: 40px;
-    border-radius: 30px;
-    margin: 1rem 5rem 3rem 5rem;
-    background-color: rgba(245, 245, 245, 0.3);
-}
-
-.testimonials-title {
-    font-size: 1.5rem;
-    text-align: center;
-    border-bottom: 3px dotted #DA7A62;
-}
-
-.feature {
-    display: flex;
-    margin: 10px;
-}
-
-.feature-item {
-    margin-right: 10px;
-    padding: 10px 20px;
-    border-radius: 30px;
-    background-color: #DA7A62;
-    font-size: 0.8em;
-    color: white;
-    text-decoration: none;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    transition: transform 0.2s ease;
-}
-
-.testimonials-main {
-    display: flex;
-    justify-content: space-between;
-}
-
-.testimonials-main p {
-    margin-left: 40px;
-    font-size: 0.9rem;
-    text-align: left;
-}
-
-/* 🎯 レスポンシブ対応 */
-@media screen and (max-width: 768px) {
-    .testimonials-inner {
-        padding: 10px;
-        border-radius: 20px;
-        margin: 1rem 0.5rem 3rem 0.5rem;
-    }
-
-    .testimonials-title {
-        font-size: 1rem;
-        border-bottom: 2px dotted #DA7A62;
-    }
-
-    .feature {
-        margin: 10px;
-    }
-
-    .feature-item {
-        margin-right: 10px;
-        padding: 8px 10px;
-        border-radius: 30px;
-        font-size: 0.5em;
-    }
-
-    .testimonials-main {
-        display: block;
-        text-align: center;
-    }
-
-    .testimonials-main p {
-        margin-left: 0px;
-        font-size: 12px;
-    }
-}
-
-/* スタッフ紹介 */
-#staff {
-    padding: 40px 20px;
-    text-align: center;
-    background-color: rgba(249, 128, 48, 0.8);
-    border-radius: 20px;
-}
-
-#staff h2 {
-    font-size: 2em;
-    margin-bottom: 40px;
-    display: inline-block;
-    padding: 0.3em 1em;
-}
-
-.staff-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 30px;
-}
-
-.staff-card {
-    width: 160px;
-    text-align: center;
-}
-
-.staff-card img {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.staff-name {
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-.staff-role {
-    font-size: 0.8em;
-    background-color: #fff;
-    color: #333;
-    display: inline-block;
-    padding: 2px 6px;
-    border-radius: 6px;
-    margin-top: 4px;
-}
-
-/* 🎯 レスポンシブ対応 */
-@media screen and (max-width: 768px) {
-    #staff {
-        padding: 20px 10px;
-    }
-
-    #staff h2 {
-        font-size: 20px;
-        margin-bottom: 0;
-    }
-
-    .staff-container {
-        display: block;
-        text-align: center;
-    }
-
-    .staff-card {
-        width: 45%;
-        text-align: center;
-        margin: 50px auto 0px auto;
-    }
-
-    .staff-card img {
-        width: 100%;
-        height: auto;
-    }
-
-
-    .staff-name {
-        margin-top: 0;
-    }
-
-    .staff-role {
-        font-size: 0.6em;
-        margin-top: 2px;
-    }
-
-
-
-}
-
-/* 利用手順 */
-.step {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-}
-
-.step li {
-    background: #9bbb30;
-    flex: 1;
-    text-align: center;
-    padding: 1em;
-    position: relative;
-    margin: 10px;
-    border-radius: 8px;
-}
-
-
-
-
-.step-title {
-    font-size: 1.2em;
-    margin-bottom: 0.5em;
-    color: #fff;
-    border-bottom: 1px dotted #f5f5f5;
-}
-
-.step-content {
-    margin-top: 0.5em;
-}
-
-.step-content img {
-    max-width: 120px;
-    height: auto;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-}
-
-.step-content p {
-    font-size: 1em;
-    margin: 0;
-    color: #fff;
-    font-weight: bold;
-}
-
-/* 🎯 レスポンシブ対応 */
-@media screen and (max-width: 768px) {
-    .step {
-        display: block;
-        width: 80%;
-        margin: 0 auto;
-    }
-
-    .step-title {
-        font-size: 1em;
-    }
-
-    .step-content {
-        margin-top: 0.5em;
-    }
-
-    .step-content p {
-        font-size: 0.9em;
-    }
-}
-
-/* FAQ */
-
-#faq h2 {
-    margin-bottom: 10px;
-}
-
-.faq-item {
-    background-color: rgba(71, 127, 248, 0.8);
-    border-left: 5px solid #f85539;
-    padding: 16px;
-    margin-bottom: 16px;
-    border-radius: 8px;
-}
-
-.question,
-.answer {
-    display: flex;
-    align-items: flex-start;
-    margin: 8px 0;
-    line-height: 1.6;
-    color: #f5f5f5;
-}
-
-.q-icon,
-.a-icon {
-    flex-shrink: 0;
-    font-weight: bold;
-    color: #fff;
-    background-color: #f85539;
-    border-radius: 5px;
-    width: 24px;
-    height: 24px;
-    text-align: center;
-    line-height: 24px;
-    margin-right: 8px;
-}
-
-.q-icon {
-    background-color: darkblue;
-}
-
-.question {
-    font-weight: bold;
-}
-
-/* 🎯 レスポンシブ対応 */
-@media screen and (max-width: 768px) {
-
-    .faq-item {
-        border-left: 5px solid #f85539;
-        padding: 8px;
-        margin-bottom: 10px;
-        font-size: 12px;
-    }
-
-    .question,
-    .answer {
-        line-height: 1.8;
-    }
-
-    .q-icon,
-    .a-icon {
-        width: 20px;
-        height: 20px;
-        line-height: 20px;
-    }
-}
 
 
 /* メールでのお問い合わせ */
@@ -1554,6 +1150,52 @@ th {
 }
 
 
+
+/* 固定お問い合わせボタン */
+.contact-buttons {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.contact-button {
+    flex: 1;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    transition: all 0.3s;
+}
+
+.contact-button.line {
+    background-color: #00B900;
+}
+
+.contact-button.mail {
+    background-color: #F57C00;
+}
+
+.contact-button.tel {
+    background-color: #0288D1;
+}
+
+.contact-button:hover {
+    opacity: 0.9;
+}
+
+/* 🎯 レスポンシブ対応 */
+@media (max-width: 768px) {
+    .contact-button {
+        font-size: 11px;
+    }
+}
+
 /* フッター */
 footer {
     background-color: #f5f5f5;
@@ -1567,12 +1209,15 @@ footer {
     justify-content: space-between;
     font-size: 14px;
     max-width: 1200px;
-    margin: 0 auto; /* 中央寄せのポイント */
+    margin: 0 auto;
+    /* 中央寄せのポイント */
 }
 
 .footer-logo {
-    max-width: 100px;
+    max-width: 150px;
     height: auto;
+    object-fit: contain;
+    /* 比率を保って収める */
 }
 
 .address {
@@ -1652,50 +1297,5 @@ footer {
 
     .copyright {
         font-size: 10px;
-    }
-}
-
-/* 固定お問い合わせボタン */
-.contact-buttons {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    background-color: white;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-}
-
-.contact-button {
-    flex: 1;
-    padding: 15px 0;
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-    color: white;
-    transition: all 0.3s;
-}
-
-.contact-button.line {
-    background-color: #00B900;
-}
-
-.contact-button.mail {
-    background-color: #F57C00;
-}
-
-.contact-button.tel {
-    background-color: #0288D1;
-}
-
-.contact-button:hover {
-    opacity: 0.9;
-}
-
-/* 🎯 レスポンシブ対応 */
-@media (max-width: 768px) {
-    .contact-button {
-        font-size: 11px;
     }
 }
