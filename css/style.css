@@ -169,8 +169,7 @@ main {
 }
 
 section {
-    margin-bottom: 60px;
-    padding: 20px;
+    margin: 0px 30px 30px 30px;
     scroll-margin-top: 80px;
     /* ヘッダーの高さに合わせて調整 */
 }
@@ -402,7 +401,7 @@ section {
 
 .worry h2 {
     line-height: 1.6;
-    margin: 15px;
+    margin: 48px 15px 48px 15px;
     position: relative;
     font-weight: 600;
     letter-spacing: 0.02em;
@@ -499,7 +498,7 @@ section {
     border-top-right-radius: 20px;
     background-repeat: no-repeat;
     margin: 40px 40px 0 40px;
-    padding: 10px 90px 10px 90px;
+    padding: 10px 80px 10px 80px;
 }
 
 .worry-list li {
@@ -551,7 +550,9 @@ section {
     }
 
     .worry h2 {
-        font-size: 1rem;
+        font-size: 0.8rem;
+        margin-top: 30px;
+        margin-bottom: 12px;
     }
 
     .handwritten-underline {
@@ -639,6 +640,22 @@ section {
     /* 比率を保って収める */
 }
 
+/* 🎯 レスポンシブ対応 */
+@media (max-width: 768px) {
+    .support-box img {
+        height: 120px;
+        width: auto;
+        object-fit: contain;
+    }
+
+    .support h4 {
+        font-size: 1.1rem;
+    }
+
+    .support p {
+        font-size: 0.9rem;
+    }
+}
 
 
 
@@ -1151,6 +1168,136 @@ section {
 
 
 
+
+/* フッター */
+footer {
+    background-color: #f5f5f5;
+    padding: 20px 20px 40px 20px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* 中央寄せのポイント */
+}
+
+.footer-logo {
+    max-width: 130px;
+    height: auto;
+    object-fit: contain;
+    /* 比率を保って収める */
+}
+
+.address {
+    text-align: left;
+    margin-bottom: 8px;
+    line-height: 0.2;
+}
+
+.postcode {
+    font-size: 12px;
+}
+
+.phone-fax {
+    display: flex;
+    justify-content: center;
+}
+
+.phone-fax p:first-child {
+    margin-right: 20px;
+}
+
+.footer-table {
+    border-collapse: collapse;
+    border: none;
+    margin: 0;
+    line-height: 1;
+}
+
+.footer-table td {
+    border: none;
+    padding: 2px 8px;
+}
+
+.copyright {
+    font-size: 12px;
+    color: #777;
+}
+
+
+/* 🎯 レスポンシブ対応 */
+@media screen and (max-width: 768px) {
+    footer {
+        padding: 20px 0px;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-inner {
+        display: inline-block;
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .footer-logo {
+        max-width: 100px;
+        height: auto;
+        object-fit: contain;
+        /* 比率を保って収める */
+    }
+
+    .footer-company {
+        line-height: 0.2;
+    }
+
+    .postcode {
+        font-size: 10px;
+    }
+
+    .phone-fax {
+        margin-bottom: 10px;
+    }
+
+    .footer-open p {
+        margin-bottom: 0;
+    }
+
+    .footer-table {
+        border-collapse: collapse;
+        margin: 0 auto;
+        table-layout: auto;
+    }
+
+    .footer-table td {
+        padding: 2px 8px;
+        white-space: nowrap;
+    }
+
+    .footer-table td:first-child {
+        text-align: right;
+    }
+
+    .footer-table td:last-child {
+        text-align: left;
+    }
+
+    .copyright {
+        font-size: 10px;
+        margin-top: 5px;
+        margin-bottom: 0;
+    }
+
+    .social-links {
+        margin-bottom: 20px;
+    }
+}
+
 /* 固定お問い合わせボタン */
 .contact-buttons {
     position: fixed;
@@ -1193,109 +1340,5 @@ section {
 @media (max-width: 768px) {
     .contact-button {
         font-size: 11px;
-    }
-}
-
-/* フッター */
-footer {
-    background-color: #f5f5f5;
-    padding: 40px 20px;
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.footer-inner {
-    display: flex;
-    justify-content: space-between;
-    font-size: 14px;
-    max-width: 1200px;
-    margin: 0 auto;
-    /* 中央寄せのポイント */
-}
-
-.footer-logo {
-    max-width: 150px;
-    height: auto;
-    object-fit: contain;
-    /* 比率を保って収める */
-}
-
-.address {
-    text-align: left;
-    margin-bottom: 8px;
-}
-
-.postcode {
-    font-size: 12px;
-}
-
-.phone-fax {
-    display: flex;
-    justify-content: center;
-}
-
-.phone-fax p:first-child {
-    margin-right: 20px;
-}
-
-.footer-table {
-    border-collapse: collapse;
-    border: none;
-    margin: 0;
-}
-
-.footer-table td {
-    border: none;
-    padding: 2px 8px;
-}
-
-.copyright {
-    font-size: 12px;
-    color: #777;
-}
-
-
-/* 🎯 レスポンシブ対応 */
-@media screen and (max-width: 768px) {
-
-    .footer-inner {
-        display: inline-block;
-        font-size: 12px;
-    }
-
-    .address {
-        margin-bottom: 0px;
-    }
-
-    .postcode {
-        font-size: 10px;
-    }
-
-    .footer-open {
-        margin-top: 15px;
-    }
-
-    .footer-table {
-        border-collapse: collapse;
-        margin: 0 auto;
-        table-layout: auto;
-    }
-
-    .footer-table td {
-        padding: 2px 8px;
-        white-space: nowrap;
-    }
-
-    .footer-table td:first-child {
-        text-align: right;
-    }
-
-    .footer-table td:last-child {
-        text-align: left;
-    }
-
-
-    .copyright {
-        font-size: 10px;
     }
 }
