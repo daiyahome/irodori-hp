@@ -565,7 +565,7 @@ section {
 
     .worry-list {
         margin: 15px 15px 0 15px;
-        padding: 10px 0px 10px 20px;
+        padding: 10px;
     }
 
     .worry-list li {
@@ -647,6 +647,10 @@ section {
         object-fit: contain;
     }
 
+    .support h2 {
+        font-size: 26px;
+    }
+
     .support h4 {
         font-size: 1.1rem;
     }
@@ -659,7 +663,7 @@ section {
 
 
 /* 対象者 */
-#target {
+.target {
     background-color: rgba(222, 243, 197, 0.8);
     border-radius: 20px;
     padding: 40px;
@@ -670,7 +674,7 @@ section {
 }
 
 
-#target>p {
+.target>p {
     color: rgba(33, 137, 76, 0.8);
     margin: 20px auto;
     text-align: center;
@@ -750,15 +754,16 @@ section {
 
 /* 🎯 レスポンシブ対応 */
 @media screen and (max-width: 768px) {
-    #target {
+    .target {
         padding: 20px;
     }
 
-    #target h2 {
-        margin-top: 10px;
+    .target h2 {
+        margin: 10px;
+        font-size: 26px;
     }
 
-    #target>p {
+    .target>p {
         margin: 10px auto;
         font-size: 14px;
     }
@@ -798,11 +803,11 @@ section {
 
     .target-area-list {
         padding: 0.8rem 0.8rem;
-        /* 文字まわりの余白 */
     }
 
     .target-area-list p {
-        font-size: 1rem;
+        font-size: 0.9rem;
+        margin-bottom: 0;
     }
 
 }
@@ -821,7 +826,7 @@ section {
 
 .faq h2 {
     color: #555;
-    margin-bottom: 40px;
+    padding-bottom: 30px;
 }
 
 .faq-item {
@@ -869,6 +874,14 @@ section {
 /* 🎯 レスポンシブ対応 */
 @media screen and (max-width: 768px) {
 
+    .faq {
+        padding: 20px 10px 10px 10px;
+    }
+
+    .faq h2 {
+        padding-bottom: 10px;
+    }
+
     .faq-item {
         border-left: 5px solid #f85539;
         padding: 8px;
@@ -876,9 +889,9 @@ section {
         font-size: 12px;
     }
 
-    .question,
     .answer {
         line-height: 1.8;
+        margin-top: 0;
     }
 
     .q-icon,
@@ -980,8 +993,11 @@ section {
 @media screen and (max-width: 768px) {
     .contact-section {
         padding: 30px 10px;
-        ;
     }
+
+    /* .contact-section h2 {
+        font-size: 20px;
+    } */
 
     .contact-section p {
         font-size: 12px;
